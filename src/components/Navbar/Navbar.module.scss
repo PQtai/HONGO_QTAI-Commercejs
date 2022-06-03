@@ -1,0 +1,47 @@
+.navbar{
+    position: fixed;
+    display: flex;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding:  20px 50px;
+    box-shadow:#000000 0px .15px 0px 0px;
+    transition: all 0.3s ease-out;
+    .navLogo{
+        width: 20%;
+        margin-right: 10%;
+    }
+    .navNavigate{
+        flex : 1;
+        .navList{
+            height : 100%;
+            .navItem{
+                cursor: pointer;
+                display:inline;
+                font-size:13px;
+                font-weight:600;
+                text-align:center;
+            }
+        }
+    }
+    .navInfo{
+        width: 20%;
+        margin-left: 10%;
+        .navList{
+            justify-content: flex-end;
+            .navItem{
+                display:inline;
+                padding: 6px;
+                cursor: pointer;
+                >svg{
+                    font-size:17px;
+                    line-height:17px;
+                    font-weight: 100;
+                    color: #111111;
+                }
+                text-align:right;
+            }
+        }
+    }
+}

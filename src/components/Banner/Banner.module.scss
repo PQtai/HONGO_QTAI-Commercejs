@@ -1,0 +1,51 @@
+.banner{
+    .item{
+        position: relative;
+        > .itemImg {
+            width: 100%;
+            padding-top: 50%;
+            min-height: 400px;
+            background-position: top;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        .wrapTitle{
+            position : absolute;
+            top: 0;
+            display: flex;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 200px;
+            .itemTitle{
+                margin: auto 0;
+                max-width: 500px;
+                > p {
+                    padding: 10px 0;
+                }
+                > h1{
+                    font-size:70px;
+                    font-weight:600;
+                    line-height:65px;
+                    text-align:left;
+                    color: var(--txt-color);
+                }
+                .btn{
+                    background-color: #1e1e1e;
+                    padding: 10px 20px;
+                    margin: auto;
+                    border-radius: 24px;
+                    color: #FFFFFF;
+                    margin-top: 20px;
+                    cursor: pointer;
+                    transition: color 0.5s ease-in-out;
+                    border: 2px solid #111;
+                    &:hover{
+                        background-color: #FFFFFF;
+                        color: var(--txt-color);
+                    }
+                }
+            }
+        }
+    }
+}

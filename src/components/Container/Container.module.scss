@@ -1,0 +1,30 @@
+.container{
+    .headContainer{
+        .img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .bodyContainer{
+        .intro{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            > h3{
+                color: var(--txt-color);
+            }
+            > p{
+                max-width: 300px;
+                font-size: 14px;
+                line-height: 20px;
+                margin: auto;
+                color: var(--txt-primary-color);
+            }
+        }
+    }
+    .endContainer{
+
+    }
+}
