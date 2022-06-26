@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-const ReactSlick = ({children}) => {
+const ReactSlick = ({children ,detailsSetings }) => {
     const settings = {
         dots: false,
         infinite: true,
@@ -10,7 +10,8 @@ const ReactSlick = ({children}) => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
-        arrows: false
+        arrows: false,
+        ...detailsSetings
       };
   return (
     <Slider {...settings} >

@@ -2,7 +2,7 @@ import
 React,
 {
   Fragment,
-  useEffect,
+  useEffect
 } from 'react'
 import GlobalStyles from './assets/styles/globalStyles';
 import { commerce } from './lib/commerce'
@@ -10,8 +10,9 @@ import { Routes, Route } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
 import {
+  setCategoryProducts,
+  setLoading,
   setProducts,
-  setProductsFeatures,
 } from './redux';
 
 
@@ -19,16 +20,16 @@ import { publicRoutes } from './routes';
 import {DefaultLayout} from './components/Layout';
 const App = () => {
   const dispatch = useDispatch();
-  const fetchData = async () => {
-    const { data } = await commerce.products.list();
-    // dispatch((setProducts(data)));
-    // const productsFeatures = data.filter(product =>{
-    //   return product.sort_order >= 150;
-    // })
-  }
   useEffect(() => {
-    fetchData();
-  }, [])
+    const fetchData = async () => {
+      const response = await commerce.products.list();
+      dispatch(setLoading(false));
+      dispatch(setProducts(response && response.data));
+      const categorys = await commerce.categories.list();
+      dispatch(setCategoryProducts(categorys && categorys.data));
+    }
+    fetchData();// eslint-disable-next-line
+  }, []) 
   return (
     <div>
       <GlobalStyles />

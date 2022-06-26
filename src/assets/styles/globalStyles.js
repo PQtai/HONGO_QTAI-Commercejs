@@ -6,7 +6,6 @@ const GlobalStyles = createGlobalStyle`
         padding : 0;
         font-family: 'Montserrat', sans-serif;
         font-size: 16px;
-        /* transition: 0.5s all ease-in-out; */
     }
     *{
         box-sizing: border-box;
@@ -18,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
         --background-btn : #77ACB7;
         --txt-color : #232323;
         --txt-primary-color : #808080;
+        --background-color : #1e1e1e;
     }
     ul , li {
         margin : 0;
@@ -36,6 +36,13 @@ const GlobalStyles = createGlobalStyle`
         background-color : #FFFFFF;
         border : none;
         outline : none;
+    }
+    input {
+        border : none;
+        outline : none;
+    }
+    .active{
+        displauy : block;
     }
 `
 export const ContainerStyle = styled.div`
@@ -57,8 +64,39 @@ export const ContainerStyle = styled.div`
 export const Button = styled.button`
     outline: none;
     border : none;
+    cursor: pointer;
 `
-
+export const Img = styled.img`
+    width : 100%;
+    height : 100%;
+`
+const handleOptionColor = (props)=>{
+    switch (props.color) {
+        case 'Đen':
+            return '#111';
+        case 'Nâu':
+            return 'rgb(88, 88, 88)';
+        case 'Trắng':
+            return '#FFFFFF';
+        case 'Xám':
+            return '#ccc';
+        case 'Xanh Nhạt':
+            return 'rgb(188, 251, 125)';
+        case 'Xanh Dương':
+            return 'blue';
+        case 'Xanh Lục':
+            return 'chartreuse';
+        case 'Đỏ':
+            return 'red';
+        default:
+            return '#FFFFFF'
+    }
+}
+export const ItemOption = styled.li`
+    background-color : ${handleOptionColor};
+    margin : 6px;
+    width : 40px;
+`
 
 
 

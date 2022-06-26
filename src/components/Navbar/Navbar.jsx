@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
-import styled from './Navbar.module.scss';
+import styles from './Navbar.module.scss';
 import NavLogo from './NavLogo';
 import NavNavigate from './NavNavigate';
 import NavInfo from './NavInfo';
@@ -37,18 +37,18 @@ const Navbar = () => {
 
 
   return (
-    <div ref={elementNav} className={clsx(styled.navbar)} >
+    <div ref={elementNav} className={clsx(styles.navbar)} >
         <NavLogo 
         clsx={clsx}
-        styled={styled}
+        styles={styles}
         />
         <NavNavigate
         clsx={clsx}
-        styled={styled}
+        styles={styles}
         />
         <NavInfo
         clsx={clsx}
-        styled={styled}
+        styles={styles}
         />
     </div>
   )

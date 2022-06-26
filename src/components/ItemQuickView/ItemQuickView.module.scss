@@ -1,0 +1,185 @@
+.itemQuickView{
+    position: relative;
+    margin: auto;
+    background-color: #FFFFFF;
+    display: flex;
+    width: 60%;
+    .wrapQuickView{
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        .wrapImg{
+            position: relative;
+            margin:  auto 0;
+            width: 400px;
+            height: 400px;
+            cursor: pointer;
+            .itemImage{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                background-position: contain;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            &:hover .itemImage:nth-child(1){
+                z-index: 1;
+            }
+        }
+        .listInfo{
+            margin-left: 20px;
+            flex: 1;
+            > li{
+                border-bottom: 1px solid #ccc;
+            }
+            > li:nth-child(5){
+                border: none;
+            }
+            .itemName{
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 0;
+                .name{
+                    h2 {
+                        margin-bottom: 5px;
+                    }
+                }
+                .sku{
+                    line-height: 50px;
+                    font-size: 12px;
+                }
+            }
+            .itemIntro{
+                font-size: 14px;
+                padding: 10px 0;
+            }
+            .price{
+                margin: 10px 0;
+            }
+            .productOptions{
+                padding: 10px 0;
+                .optionsWrap{
+                    .listOptions{
+                        display: flex;
+                        align-items: center;
+                        >span{
+                            width: 60px;
+                        }
+                        >li {
+                            width: 40px;
+                            height: 20px;
+                            border: 1px solid #ccc;
+                            text-align: center;
+                            line-height: 100%;
+                            cursor: pointer;
+                        }
+                    }
+                    .optionAdd{
+                        display: flex;
+                        .toggleQuantity{
+                            display: flex;
+                            align-items: center;
+                            > input{
+                                width: 64px;
+                                text-align: center;
+                                &::-webkit-outer-spin-button,
+                                &::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                                }
+                                /* Firefox */
+                                &[type=number] {
+                                -moz-appearance: textfield;
+                                }
+                            }
+                            border: 1px solid #ccc;
+                            .btnToggle{
+                                display: flex;
+                                flex-direction: column;
+                                > button {
+                                    background-color: #FFFFFF;
+                                    padding: 2px 10px;
+                                    border-left: 1px solid #ccc;
+                                }
+                                > button:nth-child(1){
+                                    border-bottom: 1px solid #ccc;
+                                }
+                            }
+                        }
+                        .btnAdd{
+                            width: 40%;
+                            border: 1px solid #111;
+                            background-color: #111;
+                            color: #FFFFFF;
+                            margin-left: 20px;
+                        }
+                    }
+                    .btnAddToWishlist{
+                        display: flex;
+                        align-items: center;
+                        background-color: #FFFFFF;
+                        font-size: 12px;
+                        margin-top: 20px;
+                        &:hover {
+                            color: orange;
+                        }
+                        >svg{
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            .itemDescription{
+                padding: 10px 0;
+                .description{
+                    height: 35px;
+                    overflow: hidden;
+                    >p{
+                        font-size: 14px;
+                    }
+                    >p:nth-child(2){
+                        overflow: hidden;
+                        display: block;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 1;
+                    }
+                }
+                >Button{
+                    background-color: #FFFFFF;
+                    &:hover{
+                        color: orange;
+                    }
+                }
+            }
+            .paymentCart{
+                margin-top: 10px;
+                .listIcon{
+                    display: flex;
+                    >li{
+                        cursor: pointer;
+                        &:hover{
+                            opacity: 0.6;
+                        }
+                        svg {
+                            font-size: 16px;
+                            margin-right: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .btnClose{
+        position:absolute;
+        top: 0;
+        right: 0;
+        background-color: #111;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+    }
+}
