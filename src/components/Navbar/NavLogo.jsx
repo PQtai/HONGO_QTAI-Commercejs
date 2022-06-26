@@ -1,11 +1,11 @@
 import React from 'react'
 import Logo from '../../assets/img/logo.png'
-const NavLogo = ({styled , clsx}) => {
+const NavLogo = ({styles , clsx}) => {
   return (
-    <div className={clsx(styled.navLogo, {
+    <div className={clsx(styles.navLogo, {
         dFlex : true
     })} >
-        <img src={Logo} ></img>
+        <img alt='Logo' src={Logo} ></img>
     </div>
   )
 }

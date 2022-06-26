@@ -1,12 +1,56 @@
 import { Grid } from '@mui/material'
 import React from 'react'
-const Product = ({product}) => {
-
+import clsx from 'clsx'
+import styles from './Products.module.scss';
+import { Button } from '../../assets/styles/globalStyles';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { useDispatch } from 'react-redux';
+import { setDisplayOverlay, setItemPropOverlay } from '../../redux';
+import ItemQuickView from '../ItemQuickView/ItemQuickView';
+const Product = ({product , propsStyles}) => {
+  const dispatch = useDispatch();
+  const handleViewProduct = () =>   {
+    dispatch(setDisplayOverlay(true));
+    dispatch(setItemPropOverlay(<ItemQuickView product={product} />))
+  }
   return (
-    <Grid item md={3} sm={6} xs={12} >
-        <img alt='img product' src={product.image.url} ></img>
-        <h4>{product.name}</h4>
-        <p>{product.price.formatted_with_code}</p>
+    <Grid item md={2.4} sm={6} xs={12} >
+        <div className={clsx((propsStyles?propsStyles:styles).product)}>
+          <div className={clsx((propsStyles?propsStyles:styles).imgProduct)} >
+            {product.assets.map((item , index)=>{
+                return (
+                  <div 
+                  key={index}
+                  className={clsx((propsStyles?propsStyles:styles).itemImage)} 
+                  alt='img product'
+                  style={{
+                    backgroundImage : `url(${item.url})`,
+                  }} 
+                  ></div>
+                )
+            })}
+            <div className={clsx((propsStyles?propsStyles:styles).btnOptions)} >
+              <Button 
+              className={clsx((propsStyles?propsStyles:styles).optionAdd)} 
+              >
+                <ShoppingCartOutlinedIcon/>
+              </Button>
+              <Button 
+              onClick={handleViewProduct}
+              className={clsx((propsStyles?propsStyles:styles).optionShow)} 
+              >
+                <VisibilityOutlinedIcon/>
+              </Button>
+            </div>
+            <Button className={clsx((propsStyles?propsStyles:styles).btnFavorite)} >
+              <FavoriteBorderIcon/>
+            </Button>
+          </div>
+            <h4 className={clsx((propsStyles?propsStyles:styles).nameProduct)} >{product.name}</h4>
+            <p className={clsx((propsStyles?propsStyles:styles).priceProduct)}>{product.price.formatted_with_code}</p>
+        </div>
     </Grid>
   )
 }

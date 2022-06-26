@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../../Footer/Footer';
 import Navbar from '../../Navbar/Navbar';
 
 const SearchLayout = ({children}) => {
@@ -11,6 +12,7 @@ const SearchLayout = ({children}) => {
           </div>
           <div>{children}</div>
         </div>
+        <Footer/>
     </div>
   )
 }

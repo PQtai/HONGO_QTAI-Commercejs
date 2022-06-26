@@ -1,0 +1,124 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    color: var(--txt-primary-color);
+    .wrap{
+        margin: auto;
+        width: 80%;
+        .FHeader{
+            padding: 20px 0;
+            .getDiscount{
+                display: flex;
+                align-items: center;
+                > p{
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 10px;
+                }
+                .wrapInput{
+                    display: flex;
+                    flex: 1;
+                    margin-left: 20px;
+                    >input{
+                        padding: 10px 0 10px 10px;
+                        background-color :#303030;
+                        border-color:#303030;
+                        border-style:solid;
+                        border-width: 1px;
+                        color:#8a8a8a;
+                        width: 70%;
+                    }
+                    >button{
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        background-color :#303030;
+                        width: 30%;
+                        font-size: 12px;
+                        color: var(--txt-primary-color);
+                        > svg{
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+            .socialNetwork{
+                font-size: 12px;
+                display: flex;
+                justify-content: flex-end;
+                padding: 10px 0;
+                align-items: center;
+                .listIcon{
+                    margin-left: 20px;
+                    .itemIcon{
+                        padding: 6px;
+                        cursor: pointer;
+                        > svg{
+                            font-size: 18px;
+                        }
+                        &:hover >svg{
+                            opacity: .7;
+                        }
+                    }
+                    display: flex;
+                }
+            }
+        }
+        .FBody{
+            margin-bottom: 50px;
+            .trademark{
+                >h4{
+                    color: #b7b7b7;
+                    font-weight: 600;
+                    margin-bottom: 4px;
+                }
+                > p{
+                    max-width: 80%;
+                    font-size: 12px;
+                    line-height: 20px;
+                }
+            }
+            .nameInfo{
+                color: #b7b7b7;
+                margin-bottom: 5px;
+            }
+            .listInfo{
+                width: 80%;
+                // display: flex;
+                // flex-direction: column;
+                .itemInfo{
+                    padding: 2.5px 0;
+                    margin: 2.5px 0;
+                    font-size: 12px;
+                    cursor: pointer;
+                    display: inline-block;
+                    transition: all .3s linear;
+                    &:hover{
+                        color: #b7b7b7;
+                    }
+                }
+            }
+        }
+    }
+    .FClose{
+        padding: 20px 0;
+        background-color: #141414;
+        .wrap{
+            display: flex;
+            justify-content: space-between;
+            .supplier{
+                width: 50%;
+                font-size: 12px;
+            }
+            .paymentCart{
+                display: flex;
+                justify-content: flex-end;
+                >img{
+                    float: right;
+                    display: inline;
+                }
+            }
+        }
+    }
+}

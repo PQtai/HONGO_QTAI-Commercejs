@@ -1,0 +1,20 @@
+.products{
+   .product{
+       text-align: center;
+    //    border: 1px solid #ccc;
+        .imgProduct{
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-top: 120%;
+            margin-bottom: 20px;
+            border-radius: 24px;
+        }
+        .nameProduct{
+
+        }
+        .priceProduct{
+
+        }
+    } 
+}

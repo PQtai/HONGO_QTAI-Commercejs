@@ -6,22 +6,22 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 
 
-const NavInfo = ({styled , clsx}) => {
+const NavInfo = ({styles , clsx}) => {
   return (
-    <div className={clsx(styled.navInfo )} >
-      <ul className={clsx(styled.navList , {
+    <div className={clsx(styles.navInfo )} >
+      <ul className={clsx(styles.navList , {
         dFlex : true
       })}>
-          <li className={clsx(styled.navItem)} >
+          <li className={clsx(styles.navItem)} >
             <SearchIcon/>
           </li>
-          <li className={clsx(styled.navItem)} >
+          <li className={clsx(styles.navItem)} >
             <PersonOutlineSharpIcon/>
           </li>
-          <li className={clsx(styled.navItem)} >
+          <li className={clsx(styles.navItem)} >
             <FavoriteBorderSharpIcon/>
           </li>
-          <li className={clsx(styled.navItem)} >
+          <li className={clsx(styles.navItem)} >
             <ShoppingCartOutlinedIcon/>
           </li>
       </ul>
