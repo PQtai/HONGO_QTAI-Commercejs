@@ -3,10 +3,12 @@ import {
     SET_CATEGORY_PRODUCTS,
     SET_DISPLAY_OVERLAY,
     SET_LOADING,
-    SET_ITEM_PROP_OVERLAY
+    SET_ITEM_PROP_OVERLAY,
+    SET_CART,
 } from './constants';
 const initialState = {
     products: [],
+    cart : {},
     categoryProducts : [],
     displayOverlay : false,
     itemPropOverlay : <></>,
@@ -19,6 +21,11 @@ const rootReducer = (state = initialState , action) => {
             return {
                 ...state,
                 products : action.payload
+            };
+        case SET_CART:
+            return {
+                ...state,
+                cart : action.payload
             };
         case SET_CATEGORY_PRODUCTS:
             return {

@@ -4,6 +4,7 @@ import {
     SET_DISPLAY_OVERLAY,
     SET_LOADING,
     SET_ITEM_PROP_OVERLAY,
+    SET_CART,
 }from './constants'
 
 export const setProducts = payload => ({
@@ -24,5 +25,9 @@ export const setItemPropOverlay = payload => ({
 });
 export const setLoading = payload => ({
     type: SET_LOADING,
+    payload: payload
+});
+export const setCart = payload => ({
+    type: SET_CART,
     payload: payload
 });

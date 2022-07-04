@@ -10,6 +10,7 @@ import { Routes, Route } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
 import {
+  setCart,
   setCategoryProducts,
   setLoading,
   setProducts,
@@ -25,11 +26,19 @@ const App = () => {
       const response = await commerce.products.list();
       dispatch(setLoading(false));
       dispatch(setProducts(response && response.data));
+    }
+    const fetchCategories = async () => {
       const categorys = await commerce.categories.list();
       dispatch(setCategoryProducts(categorys && categorys.data));
     }
-    fetchData();// eslint-disable-next-line
-  }, []) 
+    const fetchCart = async () => {
+      const cart = await commerce.cart.retrieve();
+      dispatch(setCart(cart))
+    }
+    fetchData();
+    fetchCategories();
+    fetchCart();
+  }, [dispatch]) 
   return (
     <div>
       <GlobalStyles />
