@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./ItemQuickView.module.scss";
 import clsx from "clsx";
 import { Button, ItemOption } from "../../assets/styles/globalStyles";
@@ -13,6 +13,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useDispatch } from "react-redux";
 import { setDisplayOverlay } from "../../redux";
 const ItemQuickView = ({ product }) => {
+    const itemOption = useRef([]);
+    let conditionDisable = useRef(0);
+    let [disabled , setDisabled] = useState(true);
     const dispatch = useDispatch();
     const [quantityPurchasedPerItem , setQuantityPurchasedPerItem] = useState(1);
     const handleIncreaseNumber = ()=>{
@@ -35,6 +38,27 @@ const ItemQuickView = ({ product }) => {
     const handleCloseQuickView = ()=>{
         dispatch(setDisplayOverlay(false));
     }
+    const handleOptionsMe = (currentOption , name)=>{
+      if (itemOption.current.length > 0) {
+        for (const iterator of  itemOption.current) {
+          [...iterator.children].forEach(element => {
+            if(
+              currentOption.classList.contains(`item-option-${name}`) &&
+              element.classList.contains(`item-option-${name}`)
+            ){
+                element.classList.remove('is-option-me');
+              }
+            });
+          }
+          currentOption.classList.add('is-option-me');
+          if (name === 'Color' || name === 'Size') {
+            conditionDisable.current+=1;
+          }
+          if (conditionDisable.current >= itemOption.current.length) {
+            setDisabled(false);
+          }
+      }
+    };
   return (
     <div
       onClick={(e) => {
@@ -80,11 +104,18 @@ const ItemQuickView = ({ product }) => {
               {/* filter and retrieve product variations if any */}
               {product.variant_groups?.map((item, index) => {
                 return (
-                  <ul key={index} className={clsx(styles.listOptions)}>
+                  <ul 
+                  ref={(element)=>{itemOption.current[index] = element}}
+                  key={index} className={clsx(styles.listOptions)}>
                     <span>{item.name}</span>
                     {item.options.map((option, indexOption) => {
                       return (
-                        <ItemOption key={indexOption} color={option.name}>
+                        <ItemOption
+                        onClick={(e)=>{
+                          handleOptionsMe(e.target , item.name);
+                        }}
+                        className ={'item-option-'+ item.name}
+                        key={indexOption} color={option.name}>
                           {item.name === "Size" ? option.name : ""}
                         </ItemOption>
                       );
@@ -111,7 +142,9 @@ const ItemQuickView = ({ product }) => {
                     <Button onClick={handleReductionOfQuantity} >-</Button>
                   </div>
                 </div>
-                <Button className={clsx(styles.btnAdd)} >ADD TO CART</Button>
+                <Button className={clsx(styles.btnAdd,{
+                  disable : (product.variant_groups.length > 0)?disabled:false,
+                })} >ADD TO CART</Button>
               </div>
               <Button className={clsx(styles.btnAddToWishlist)} >
                 <FavoriteBorderIcon/>
