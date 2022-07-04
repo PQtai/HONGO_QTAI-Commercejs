@@ -44,6 +44,21 @@ const GlobalStyles = createGlobalStyle`
     .active{
         displauy : block;
     }
+    .btn-close{
+        position: absolute;
+        top: 10px;
+        background-color: transparent;
+        right: 10px;
+    }
+    .disable{
+        opacity : 0.6;
+        preventDefault: true;
+        cursor :  not-allowed !important;
+    }
+    .is-option-me{
+        border : 1px solid orange !important;
+        color : orange;
+    }
 `
 export const ContainerStyle = styled.div`
     z-index: 1;
