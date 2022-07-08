@@ -24,9 +24,9 @@ const BodyContainer = () => {
   const [productsNotable , setProductsNotable] = useState();
   const loading = useSelector(loadingSelector);
   const products = useSelector(productsSelector);
+  // category list
   const categoryProducts = useSelector(categoryProductsSelector);
   console.log(products);
-  console.log(categoryProducts);
 
   const getProductsNotable = useCallback(()=> {
     const findProductsNotable = products.filter((product , index) =>{

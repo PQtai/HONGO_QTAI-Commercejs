@@ -5,6 +5,7 @@ import {
     SET_LOADING,
     SET_ITEM_PROP_OVERLAY,
     SET_CART,
+    SET_INFO_TOAST_MESSAGE,
 } from './constants';
 const initialState = {
     products: [],
@@ -13,6 +14,11 @@ const initialState = {
     displayOverlay : false,
     itemPropOverlay : <></>,
     loading : true,
+    infoToastMess : {
+        openToastMess : false,
+        toastMessage  : '',
+        message   : '',
+    },
 }
 
 const rootReducer = (state = initialState , action) => {
@@ -46,7 +52,12 @@ const rootReducer = (state = initialState , action) => {
             return {
                 ...state,
                 loading : action.payload
-            }      
+            } 
+        case SET_INFO_TOAST_MESSAGE :
+            return {
+                ...state,
+                infoToastMess : action.payload
+            }    
         default:
             return state;
     }
