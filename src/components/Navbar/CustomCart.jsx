@@ -4,7 +4,9 @@ import { commerce } from "../../lib/commerce";
 import { useDispatch, useSelector } from "react-redux";
 import { infoToastMessSelector, setCart, setInfoToastMess } from "../../redux";
 import ItemCart from "./ItemCart";
-const CustomCart = ({ styles, productInCart }) => {
+import { Button } from "../../assets/styles/globalStyles";
+import KeyboardTabIcon from '@mui/icons-material/KeyboardTab';
+const CustomCart = ({ styles, productInCart , cart }) => {
   const dispatch = useDispatch();
   const customToastMess = { ...useSelector(infoToastMessSelector) };
   const handleDeleteProductInCart = async (lineItemId , name) => {
@@ -23,18 +25,32 @@ const CustomCart = ({ styles, productInCart }) => {
   return (
     <div className={clsx(styles.customCart)}>
         <div className={clsx(styles.cartWrap)} >
-            {productInCart?.map((product) => {
+            {productInCart?productInCart.map((product , index) => {
                 return (
                     <ItemCart 
+                    key={index}
                     handleDeleteProductInCart={handleDeleteProductInCart}
                     styles={styles}
                     product={product} 
                     />
                 );
-            })}
+            }):
+            <div className={clsx(styles.emptyCart)}> 
+                <h2>Cart is empty</h2>
+                <Button>
+                  Shop now 
+                  <KeyboardTabIcon/>
+                </Button>
+            </div>
+            }
         </div>
         <div className={clsx(styles.subtotal)} >
-
+            <div className={clsx(styles.total)} >
+              <span>SUBTOTAL:</span>
+              <span>{cart?.subtotal?cart.subtotal.formatted_with_symbol:'$0'}</span>
+            </div>
+            <Button className={clsx(styles.viewCart)} >VIEW CART</Button>
+            <Button className={clsx(styles.checkoutCart)} >CHECKOUT</Button>
         </div>
     </div>
   );

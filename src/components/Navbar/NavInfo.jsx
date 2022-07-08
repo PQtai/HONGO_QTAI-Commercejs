@@ -11,7 +11,6 @@ import {
 } from "../../redux";
 import ElementSearch from "../ElementSearch/ElementSearch";
 import CustomCart from "./CustomCart";
-import { Fragment } from "react";
 
 const NavInfo = ({ styles, clsx }) => {
   const dispath = useDispatch();
@@ -44,9 +43,9 @@ const NavInfo = ({ styles, clsx }) => {
             {cart?.total_items}
           </span>
           {isEmpty ? (
-            <Fragment />
+            <CustomCart styles={styles} productInCart={""} />
           ) : (
-            <CustomCart styles={styles} productInCart={cart.line_items} />
+            <CustomCart styles={styles} productInCart={cart.line_items} cart={cart} />
           )}
         </li>
       </ul>
