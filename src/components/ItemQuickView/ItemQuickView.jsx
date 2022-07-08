@@ -30,6 +30,7 @@ const ItemQuickView = ({ product }) => {
   const elementInputQuantity = useRef();
   let conditionDisable = useRef(0);
   let [disabled, setDisabled] = useState(true);
+  let [disabledNoOptions, setDisabledNoOptions] = useState(false);
   const dispatch = useDispatch();
   const [quantityPurchasedPerItem, setQuantityPurchasedPerItem] = useState(1);
   const infoToastMess = useSelector(infoToastMessSelector);
@@ -79,6 +80,8 @@ const ItemQuickView = ({ product }) => {
     customVariantData.current[groupId] = optionId;
   };
   const handleToAddCart = (productId, quantity, variantData) => {
+    setDisabled(true);
+    setDisabledNoOptions(true);
     commerce.cart
       .add(productId, quantity, variantData)
       .then((item) => {
@@ -90,6 +93,8 @@ const ItemQuickView = ({ product }) => {
         customToastMess.current.toastMessage = "success";
         customToastMess.current.message = "Add to cart successfully";
         dispatch(setInfoToastMess(customToastMess.current));
+        setDisabled(false);
+        setDisabledNoOptions(false);
       })
       .catch((error) => {
         console.log(error);
@@ -173,7 +178,7 @@ const ItemQuickView = ({ product }) => {
                 <div
                   className={clsx(styles.toggleQuantity, {
                     disable:
-                      product.variant_groups.length > 0 ? disabled : false,
+                      product.variant_groups.length? disabled : disabledNoOptions,
                   })}
                 >
                   <input
@@ -194,16 +199,20 @@ const ItemQuickView = ({ product }) => {
                   </div>
                 </div>
                 <Button
-                  onClick={() => {
-                    handleToAddCart(
-                      product.id,
-                      elementInputQuantity.current.value,
-                      customVariantData.current
-                    );
+                  onClick={(e) => {
+                    if(e.target.classList.contains('disable')){
+                      e.stopPropagation();
+                    }else{
+                      handleToAddCart(
+                        product.id,
+                        elementInputQuantity.current.value,
+                        customVariantData.current
+                      );
+                    }
                   }}
                   className={clsx(styles.btnAdd, {
                     disable:
-                      product.variant_groups.length > 0 ? disabled : false,
+                      product.variant_groups.length? disabled : disabledNoOptions,
                   })}
                 >
                   ADD TO CART

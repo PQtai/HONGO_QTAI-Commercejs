@@ -16,8 +16,15 @@ const ItemCart = ({ styles, product, handleDeleteProductInCart }) => {
       <div className={clsx(styles.infoProduct)} >
         <div className={clsx(styles.itemInfo)}>
             <h4>{product.name}</h4>
+            {product.selected_options.length?
+              product.selected_options.map((option , index)=>{
+                return (
+                  <p key={index}>{option.group_name} : {option.option_name}</p>
+                )
+              }):
+              <></>
+            }
             <p>{product.quantity}x{product.line_total.formatted_with_symbol}</p>
-            
         </div>
         <div className={clsx(styles.btnClose)} onClick={() => handleDeleteProductInCart(product.id, product.name)}>
             <Button>

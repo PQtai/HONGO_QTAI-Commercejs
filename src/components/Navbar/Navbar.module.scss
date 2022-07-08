@@ -44,6 +44,9 @@
             }
             .navCart{
                 position: relative;
+                &:hover .customCart{
+                    display: block;
+                }
                 .itemQuantity{
                     position: absolute;
                     top: -6px;
@@ -65,8 +68,18 @@
                     background-color: #111111;
                     padding: 10px;
                     cursor: default;
+                    // display: none;
+                    :before {
+                        content: "";
+                        position: absolute;
+                        bottom: 100%;
+                        height: 20px;
+                        width: 50%;
+                        background-color: transparent;
+                        right: 0;
+                    }
                     .cartWrap{
-                        max-height: 40vh;
+                        max-height: 35vh;
                         background-color: #FFFFFF;
                         overflow-y: scroll;
                         padding-top: 10px;
@@ -94,6 +107,7 @@
                                     }
                                     > p {
                                         font-size: 11px;
+                                        margin: 2px 0;
                                     }
                                 }
                                 .btnClose{
@@ -108,10 +122,73 @@
                                 }
                             }
                         }
+                        .emptyCart{
+                            >h2{
+                                padding: 40px 0;
+                                text-align: center;
+                            }
+                            > button{
+                                display: flex;
+                                align-items: center;
+                                background-color: transparent;
+                                margin-right: 10px;
+                                margin-bottom: 10px;
+                                float: right;
+                                transition: all .4s ease-in-out;
+                                &:hover {
+                                    color: #f57250;
+                                }
+                                > svg{
+                                    font-size: 12px;
+                                    margin-left: 6px;
+                                }
+                            }
+                        }
                     }
                     .subtotal{
-                        height: 100px;
-                        background-color: green;
+                        background-color: #111111;
+                        padding: 10px 0 0;
+                        color: #FFFFFF;
+                        .total{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            font-size: 13px;
+                            > span{
+                                &:nth-child(1){
+                                    font-size: 11px;
+                                    color: #8d8d8d;
+                                }
+                            }
+                        }
+                        .viewCart,
+                        .checkoutCart{
+                            border: 1px solid #8d8d8d;
+                            margin: 7px 0;
+                            padding: 10px 0;
+                            text-align: center;
+                            font-size: 11px;
+                            display: block;
+                            width: 100%;
+                            transition: all .5s ease-in-out;
+                        }
+                        .viewCart{
+                            background-color: #1c1c1c;
+                            color: #8d8d8d;
+                            &:hover {
+                                color: #FFFFFF;
+                            }
+                        }
+                        .checkoutCart{
+                            background-color: #FFFFFF;
+                            color: #111111;
+                            &:hover {
+                                background-color: #f57250;
+                                border-color: #f57250;
+                                color: #FFFFFF;
+                            }
+
+                        }
                     }
                 }
             }

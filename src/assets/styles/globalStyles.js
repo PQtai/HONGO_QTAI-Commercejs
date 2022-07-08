@@ -52,7 +52,8 @@ const GlobalStyles = createGlobalStyle`
     }
     .disable{
         opacity : 0.6;
-        preventDefault: true;
+        preventDefault: true !important;
+        pointer-events: none;
         cursor :  not-allowed !important;
     }
     .is-option-me{
@@ -73,6 +74,13 @@ export const ContainerStyle = styled.div`
     @media (max-width: 739px) {
         padding-right: 10px;
         padding-left: 10px;
+    }
+`
+
+export const Cursor = styled.div`
+    flex: 1;
+    cursor : ${props =>
+        props.disabled?'not-allowed':'pointer'
     }
 `
 
