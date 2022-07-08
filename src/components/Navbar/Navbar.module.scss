@@ -42,6 +42,79 @@
                 }
                 text-align:right;
             }
+            .navCart{
+                position: relative;
+                .itemQuantity{
+                    position: absolute;
+                    top: -6px;
+                    right: -4px;
+                    background-color: #000000;
+                    color: #FFFFFF;
+                    font-size: 12px;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                    line-height: 20px;
+                }
+                .customCart{
+                    position: absolute;
+                    top: calc(100% + 20px);
+                    right: 0;
+                    width: 260px;
+                    background-color: #111111;
+                    padding: 10px;
+                    cursor: default;
+                    .cartWrap{
+                        max-height: 40vh;
+                        background-color: #FFFFFF;
+                        overflow-y: scroll;
+                        padding-top: 10px;
+                        .itemCart{
+                            display: flex;
+                            padding: 0 14px 10px 10px;
+                            .wrapImg{
+                                width: 30%;
+                                .cartImg{
+                                    padding-top: 100%;
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                    background-position: center;
+                                }
+                            }
+                            .infoProduct{
+                                flex: 1;
+                                text-align: left;
+                                margin-left: 10px;
+                                display: flex;
+                                justify-content: space-between;
+                                .itemInfo{
+                                    > h4 {
+                                        font-size: 12px;
+                                    }
+                                    > p {
+                                        font-size: 11px;
+                                    }
+                                }
+                                .btnClose{
+                                     > button {
+                                        cursor: pointer;
+                                        background-color: transparent;
+                                        display: inline-flex;
+                                        > svg {
+                                            font-size: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .subtotal{
+                        height: 100px;
+                        background-color: green;
+                    }
+                }
+            }
         }
     }
 }

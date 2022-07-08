@@ -7,13 +7,19 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useDispatch } from 'react-redux';
-import { setDisplayOverlay, setItemPropOverlay } from '../../redux';
+import { setCart, setDisplayOverlay, setItemPropOverlay } from '../../redux';
 import ItemQuickView from '../ItemQuickView/ItemQuickView';
+import {commerce} from '../../lib/commerce';
+
 const Product = ({product , propsStyles}) => {
   const dispatch = useDispatch();
   const handleViewProduct = () =>   {
     dispatch(setDisplayOverlay(true));
     dispatch(setItemPropOverlay(<ItemQuickView product={product} />))
+  }
+  const handleToAddCart = async (productId , quantity) => {
+    const item = await commerce.cart.add(productId, quantity);
+    dispatch(setCart(item.cart));
   }
   return (
     <Grid item md={2.4} sm={6} xs={12} >
@@ -33,6 +39,11 @@ const Product = ({product , propsStyles}) => {
             })}
             <div className={clsx((propsStyles?propsStyles:styles).btnOptions)} >
               <Button 
+              onClick={()=>{
+                if(product.variant_groups.length === 0) {
+                  handleToAddCart(product.id , 1);
+                }
+              }}
               className={clsx((propsStyles?propsStyles:styles).optionAdd)} 
               >
                 <ShoppingCartOutlinedIcon/>

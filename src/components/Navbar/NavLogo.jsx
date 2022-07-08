@@ -10,4 +10,4 @@ const NavLogo = ({styles , clsx}) => {
   )
 }
 
-export default NavLogo
+export default React.memo(NavLogo);

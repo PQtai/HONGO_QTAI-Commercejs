@@ -3,10 +3,10 @@ React,
 {
   Fragment,
   useEffect
-} from 'react'
+} from 'react';
 import GlobalStyles from './assets/styles/globalStyles';
-import { commerce } from './lib/commerce'
-import { Routes, Route } from 'react-router-dom'
+import { commerce } from './lib/commerce';
+import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import {
@@ -22,18 +22,24 @@ import {DefaultLayout} from './components/Layout';
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await commerce.products.list();
-      dispatch(setLoading(false));
-      dispatch(setProducts(response && response.data));
+    const fetchData =  () => {
+      commerce.products.list()
+          .then((response) => {
+            dispatch(setProducts(response && response.data));
+            dispatch(setLoading(false));
+          })
     }
-    const fetchCategories = async () => {
-      const categorys = await commerce.categories.list();
-      dispatch(setCategoryProducts(categorys && categorys.data));
+    const fetchCategories =  () => {
+      commerce.categories.list()
+          .then((categorys) => {
+            dispatch(setCategoryProducts(categorys && categorys.data));
+          })
     }
-    const fetchCart = async () => {
-      const cart = await commerce.cart.retrieve();
-      dispatch(setCart(cart))
+    const fetchCart =  () => {
+      commerce.cart.retrieve()
+          .then((cart) => { 
+            dispatch(setCart(cart));
+          })
     }
     fetchData();
     fetchCategories();

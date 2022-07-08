@@ -5,6 +5,7 @@ import {
     SET_LOADING,
     SET_ITEM_PROP_OVERLAY,
     SET_CART,
+    SET_INFO_TOAST_MESSAGE,
 }from './constants'
 
 export const setProducts = payload => ({
@@ -29,5 +30,9 @@ export const setLoading = payload => ({
 });
 export const setCart = payload => ({
     type: SET_CART,
+    payload: payload
+});
+export const setInfoToastMess = payload => ({
+    type: SET_INFO_TOAST_MESSAGE,
     payload: payload
 });

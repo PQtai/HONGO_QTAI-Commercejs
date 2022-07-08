@@ -19,4 +19,4 @@ const NavNavigate = ({styles , clsx}) => {
   )
 }
 
-export default NavNavigate
+export default React.memo(NavNavigate);
