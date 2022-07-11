@@ -16,7 +16,7 @@ const BannerSearch = () => {
           <h2>Search results: <span>{`"${value_search}"`}</span></h2>
           <ul className={clsx(styles.directional)} >
             <li className={clsx(styles.itemLink)} >
-              <Link to='/HONGO_QTAI-Commercejs'><span>Home</span></Link>
+              <Link to='/HONGO_QTAI-Commercejs/'><span>Home</span></Link>
             </li>
             <li className={clsx(styles.itemLink)} >
               <span>Shop</span>
