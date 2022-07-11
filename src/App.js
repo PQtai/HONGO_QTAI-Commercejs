@@ -17,8 +17,9 @@ import {
 } from './redux';
 
 
-import { publicRoutes } from './routes';
+import routes from './routes';
 import {DefaultLayout} from './components/Layout';
+
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -49,7 +50,7 @@ const App = () => {
     <div>
       <GlobalStyles />
       <Routes>
-        {publicRoutes.map((route, index) => {
+        {routes().publicRoutes.map((route, index) => {
           let Layout = DefaultLayout;
           if(route.layout){
             Layout = route.layout;
@@ -74,5 +75,5 @@ const App = () => {
   )
 }
 
-export default App
+export default React.memo(App);
 

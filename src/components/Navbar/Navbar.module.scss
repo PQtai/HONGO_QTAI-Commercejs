@@ -111,6 +111,8 @@
                                     }
                                 }
                                 .btnClose{
+                                    display : inline;
+                                    height: 20px;
                                      > button {
                                         cursor: pointer;
                                         background-color: transparent;

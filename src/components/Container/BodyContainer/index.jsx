@@ -3,7 +3,7 @@ import Intro from './Intro'
 import clsx from 'clsx';
 import styles from '../Container.module.scss';
 import { useSelector } from 'react-redux';
-import { categoryProductsSelector, loadingSelector, productsSelector } from '../../../redux';
+import { loadingSelector, productsSelector } from '../../../redux';
 import Suggestions from './Suggestions';
 import Blog from './Blog';
 import { Grid } from '@mui/material';
@@ -24,9 +24,6 @@ const BodyContainer = () => {
   const [productsNotable , setProductsNotable] = useState();
   const loading = useSelector(loadingSelector);
   const products = useSelector(productsSelector);
-  // category list
-  const categoryProducts = useSelector(categoryProductsSelector);
-  console.log(products);
 
   const getProductsNotable = useCallback(()=> {
     const findProductsNotable = products.filter((product , index) =>{
@@ -43,13 +40,19 @@ const BodyContainer = () => {
       <Intro props={advice}/>
       <div className={clsx(styles.productsNotable)} >
         <Grid container spacing={2} >
-          {loading?<Loading/>:
-          productsNotable?.map((product) => (
-              <Product  
-              key={product.id} 
-              propsStyles={styles}
-              product={product}/>
-          ))}
+          {
+          loading?
+          ([1 , 2 , 3 , 4 , 5].map((item, index) => (
+                <Loading key={index} />
+            )))
+          :
+            productsNotable?.map((product) => (
+                (<Product  
+                key={product.id} 
+                propsStyles={styles}
+                product={product}
+                />)
+            ))}
         </Grid>
       </div>
       <Suggestions/>

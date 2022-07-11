@@ -1,0 +1,20 @@
+.pagination{
+    display: flex;
+    margin-top: 20px;
+    .listPage{
+        margin: auto;
+        display: flex;
+        .indexPage{
+            display: inline;
+            width: 40px;
+            padding: 5px 0;
+            text-align: center;
+            margin: 0 10px;
+            border: .5px solid #ccc;
+            cursor: pointer;
+        }
+        .indexPage.active{
+            background-color: orange;
+        }
+    }
+}

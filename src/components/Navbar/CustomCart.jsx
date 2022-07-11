@@ -9,7 +9,8 @@ import KeyboardTabIcon from '@mui/icons-material/KeyboardTab';
 const CustomCart = ({ styles, productInCart , cart }) => {
   const dispatch = useDispatch();
   const customToastMess = { ...useSelector(infoToastMessSelector) };
-  const handleDeleteProductInCart = async (lineItemId , name) => {
+  const handleDeleteProductInCart = async (elementClose ,lineItemId , name) => {
+    elementClose.classList.add('disable');
     commerce.cart
       .remove(lineItemId)
       .then(({cart}) => {
@@ -17,6 +18,7 @@ const CustomCart = ({ styles, productInCart , cart }) => {
         customToastMess.openToastMess = true;
         customToastMess.message = `Product ${name} deleted successfully!`;
         dispatch(setInfoToastMess(customToastMess));
+        elementClose.classList.remove('disable');
       })
       .catch((error) => {
         console.log(error);
