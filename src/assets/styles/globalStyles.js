@@ -55,6 +55,13 @@ const GlobalStyles = createGlobalStyle`
         preventDefault: true !important;
         pointer-events: none;
         cursor :  not-allowed !important;
+        -webkit-touch-callout: none;/* iOS Safari */
+        -webkit-user-select: none;  /* Safari */
+        -khtml-user-select: none;   /* Konqueror HTML */
+        -moz-user-select: none;     /* Old versions of Firefox */
+            -ms-user-select: none;  /* Internet Explorer/Edge */
+                user-select: none;  /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
     }
     .is-option-me{
         border : 1px solid orange !important;
@@ -103,6 +110,8 @@ const handleOptionColor = (props)=>{
             return '#FFFFFF';
         case 'Xám':
             return '#ccc';
+        case 'Xanh': 
+            return '#207d6a';
         case 'Xanh Nhạt':
             return 'rgb(188, 251, 125)';
         case 'Xanh Dương':

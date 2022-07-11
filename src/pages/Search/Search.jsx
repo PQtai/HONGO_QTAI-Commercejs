@@ -1,9 +1,9 @@
 import React from 'react'
-
+import SearchCpn from '../../components/SearchCpn'
 const Search = () => {
   return (
-    <div>
-        search page
+    <div >
+      <SearchCpn/>
     </div>
   )
 }

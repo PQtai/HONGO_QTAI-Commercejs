@@ -1,0 +1,63 @@
+.banner {
+    position: relative;
+    margin-bottom: 140px;
+    .img{
+        min-height: 300px;
+        background-image: url(https://hongo.b-cdn.net/wp-content/uploads/2019/06/shop-title-bg.jpg);
+        background-position: top right;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-top: 34%;
+    }
+    .wrapTitle{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        .title{
+            margin: auto;
+            text-align: center;
+            max-width: 400px;
+            > p{
+                background-color: #F57250;
+                font-size: 12px;
+                color: #fff;
+                padding: 6px 0px;
+                margin-bottom: 10px;
+                width: 80%;
+                margin: auto;
+            }
+            > h2 {
+                font-size: 38px;
+            }
+            .directional {
+                display: flex;
+                justify-content: center;
+
+                .itemLink {
+                    position: relative;
+                    padding: 5px 4px;
+                    font-size: 12px;
+                    margin: 5px 0;
+                    display: inline;
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        width: .5px;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        background-color: #ccc;
+                    }
+                    &:last-child::after{
+                        display: none;
+                    }
+                }
+            }
+        }
+
+    }
+}

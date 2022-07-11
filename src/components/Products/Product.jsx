@@ -8,7 +8,13 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import PanoramaVerticalSelectTwoToneIcon from "@mui/icons-material/PanoramaVerticalSelectTwoTone";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useDispatch, useSelector } from "react-redux";
-import { infoToastMessSelector, setCart, setDisplayOverlay, setInfoToastMess, setItemPropOverlay } from "../../redux";
+import {
+  infoToastMessSelector,
+  setCart,
+  setDisplayOverlay,
+  setInfoToastMess,
+  setItemPropOverlay,
+} from "../../redux";
 import ItemQuickView from "../ItemQuickView/ItemQuickView";
 import { commerce } from "../../lib/commerce";
 import { useState } from "react";

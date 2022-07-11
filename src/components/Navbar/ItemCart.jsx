@@ -26,7 +26,7 @@ const ItemCart = ({ styles, product, handleDeleteProductInCart }) => {
             }
             <p>{product.quantity}x{product.line_total.formatted_with_symbol}</p>
         </div>
-        <div className={clsx(styles.btnClose)} onClick={() => handleDeleteProductInCart(product.id, product.name)}>
+        <div className={clsx(styles.btnClose)} onClick={(e) => handleDeleteProductInCart(e.currentTarget,product.id, product.name)}>
             <Button>
                 <CloseIcon />
             </Button>
