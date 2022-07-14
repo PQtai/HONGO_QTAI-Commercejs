@@ -9,6 +9,9 @@ import {
     SET_VALUE_SEARCH,
     SET_POST_TYPE,
     SET_RESULTS_SEARCH,
+    SET_FILTER_WITH_CATEGORIES,
+    SET_FILTER_WITH_PRICE_ASC,
+    SET_FILTER_WITH_PRICE_DESC,
 } from './constants';
 const initialState = {
     products: [],
@@ -26,7 +29,12 @@ const initialState = {
         value_search : '',
         post_type : '',
         results_search : '',
-    }
+    },
+    filter_options : {
+        filter_with_categories : '',
+        filter_with_price_asc : false,
+        filter_with_price_desc : false,
+    },
 }
 
 const rootReducer = (state = initialState , action) => {
@@ -88,6 +96,30 @@ const rootReducer = (state = initialState , action) => {
                 search_parameters : {
                     ...state.search_parameters , 
                     post_type : action.payload
+                }
+            }
+        case SET_FILTER_WITH_CATEGORIES :
+            return {
+                ...state,
+                filter_options : {
+                    ...state.filter_options , 
+                    filter_with_categories : action.payload
+                }
+            }
+        case SET_FILTER_WITH_PRICE_ASC :
+            return {
+                ...state,
+                filter_options : {
+                    ...state.filter_options , 
+                    filter_with_price_asc : action.payload
+                }
+            }
+        case SET_FILTER_WITH_PRICE_DESC :
+            return {
+                ...state,
+                filter_options : {
+                    ...state.filter_options , 
+                    filter_with_price_desc : action.payload
                 }
             }
         default:

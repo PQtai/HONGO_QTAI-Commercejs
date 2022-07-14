@@ -6,3 +6,4 @@ export const loadingSelector = (value) => value.loading;
 export const itemPropOverlaySelector = (value) => value.itemPropOverlay;
 export const infoToastMessSelector = (value) => value.infoToastMess;
 export const search_parametersSelector = (value) => value.search_parameters;
+export const filter_options_Selector = (value) => value.filter_options;

@@ -18,11 +18,11 @@ const ElementSearch = () => {
       dispath(setDisplayOverlay(false));
   }
   const handleKeyDown = (e)=>{
-    if(e.key === 'Enter'){
-        dispath(setResulesSearch(e.target.value));
+    if(e.key === 'Enter' && e.target.value){
+        dispath(setResulesSearch(value_search));
         dispath(setDisplayOverlay(false));
         dispath(setItemPropOverlay(<></>));
-        navigate(`/HONGO_QTAI-Commercejs/search?s=${value_search}&post_type=${post_type}`);
+        navigate(`/HONGO_QTAI-Commercejs/shop/search=${value_search}&post_type=${post_type}`);
     }
   };
   const handleButtonSearch = () => {
