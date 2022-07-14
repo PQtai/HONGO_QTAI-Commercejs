@@ -24,11 +24,13 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     const fetchData =  () => {
-      commerce.products.list()
-          .then((response) => {
-            dispatch(setProducts(response && response.data));
-            dispatch(setLoading(false));
-          })
+      commerce.products.list({
+        limit: 200,
+      })
+      .then((response) => {
+        dispatch(setProducts(response && response.data));
+        dispatch(setLoading(false));
+      })
     }
     const fetchCategories =  () => {
       commerce.categories.list()

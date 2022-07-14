@@ -8,4 +8,9 @@ export const SET_INFO_TOAST_MESSAGE  = 'set_info_toast_message';
 export const SET_VALUE_SEARCH = 'set_value_search';
 export const SET_POST_TYPE = 'set_post_type';
 export const SET_RESULTS_SEARCH = 'set_results_search';
+export const SET_FILTER_WITH_CATEGORIES = 'set_filter_with_categories';
+export const SET_FILTER_WITH_PRICE_ASC = 'set_filter_with_price_asc';
+export const SET_FILTER_WITH_PRICE_DESC = 'set_filter_with_price_desc';
+
+
 

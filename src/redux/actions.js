@@ -9,6 +9,9 @@ import {
     SET_VALUE_SEARCH,
     SET_POST_TYPE,
     SET_RESULTS_SEARCH,
+    SET_FILTER_WITH_CATEGORIES,
+    SET_FILTER_WITH_PRICE_ASC,
+    SET_FILTER_WITH_PRICE_DESC,
 }from './constants'
 
 export const setProducts = payload => ({
@@ -49,6 +52,18 @@ export const setPostType = payload => ({
 });
 export const setResulesSearch = payload => ({
     type: SET_RESULTS_SEARCH,
+    payload: payload
+});
+export const setFilterWithCategories = payload => ({
+    type: SET_FILTER_WITH_CATEGORIES,
+    payload: payload
+});
+export const setFilterWithPriceAsc = payload => ({
+    type: SET_FILTER_WITH_PRICE_ASC,
+    payload: payload
+});
+export const setFilterWithPriceDesc = payload => ({
+    type: SET_FILTER_WITH_PRICE_DESC,
     payload: payload
 });
 

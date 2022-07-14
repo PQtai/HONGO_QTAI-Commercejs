@@ -101,25 +101,25 @@ export const Img = styled.img`
     height : 100%;
 `
 const handleOptionColor = (props)=>{
-    switch (props.color) {
-        case 'Đen':
+    switch (props.color.toLowerCase()) {
+        case 'đen':
             return '#111';
-        case 'Nâu':
+        case 'nâu':
             return 'rgb(88, 88, 88)';
-        case 'Trắng':
+        case 'trắng':
             return '#FFFFFF';
-        case 'Xám':
+        case 'xám':
             return '#ccc';
-        case 'Xanh': 
+        case 'xanh': 
             return '#207d6a';
-        case 'Xanh Nhạt':
+        case 'xanh nhạt':
             return 'rgb(188, 251, 125)';
-        case 'Xanh Dương':
-            return 'blue';
-        case 'Xanh Lục':
-            return 'chartreuse';
-        case 'Đỏ':
-            return 'red';
+        case 'xanh dương':
+            return '#5DADE2';
+        case 'xanh lục':
+            return '#52BE80';
+        case 'đỏ':
+            return '#C0392B';
         default:
             return '#FFFFFF'
     }

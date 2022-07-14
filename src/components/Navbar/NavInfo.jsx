@@ -15,7 +15,6 @@ import CustomCart from "./CustomCart";
 const NavInfo = ({ styles, clsx }) => {
   const dispath = useDispatch();
   const cart = useSelector(cartSelector);
-  console.log(cart);
   const isEmpty = !cart?.total_items;
   const handleSearchBtn = () => {
     dispath(setItemPropOverlay(<ElementSearch />));

@@ -85,7 +85,6 @@ const ItemQuickView = ({ product }) => {
     commerce.cart
       .add(productId, quantity, variantData)
       .then((item) => {
-        console.log(item.cart);
         dispatch(setCart(item.cart));
         dispatch(setDisplayOverlay(false));
         dispatch(setItemPropOverlay(<></>));
@@ -157,7 +156,7 @@ const ItemQuickView = ({ product }) => {
                       return (
                         <ItemOption
                           onClick={(e) => {
-                            handleOptionsMe(e.target, item, item.name);
+                            handleOptionsMe(e.currentTarget, item, item.name);
                             setVariantData(item.id, option.id);
                           }}
                           className={"item-option-" + item.name}

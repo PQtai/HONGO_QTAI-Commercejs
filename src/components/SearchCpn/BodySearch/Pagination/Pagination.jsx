@@ -7,6 +7,7 @@ const Pagination = ({
     productsPerPage,
     currentPage,
     setCurrentPage,
+    loadingSearch,
 }) => {
     
     const handleCurrentPage = (indexPage)=>{
@@ -19,9 +20,11 @@ const Pagination = ({
     for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
         pageNumbers.push(i);
     }
-    console.log(currentPage);
+    console.log('total' , totalProducts);
+    console.log('productsPerPage' , productsPerPage);
   return (
     <div className={clsx(styles.pagination)} >
+        {loadingSearch?'':
         <ul className={clsx(styles.listPage)} >
             {pageNumbers.map((indexPage , index) =>{
                 return (
@@ -35,6 +38,7 @@ const Pagination = ({
                 )
             })}
         </ul>
+        }
     </div>
   )
 }
