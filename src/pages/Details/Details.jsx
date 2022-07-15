@@ -5,7 +5,7 @@ import DetailComponent from "../../components/DetailComponent";
 import LoadingDetail from "../../components/DetailComponent/LoadingDetail";
 import { commerce } from "../../lib/commerce";
 
-const Detail = () => {
+const Details = () => {
   const [productDetail, setProductDetail] = useState();
   const location = useLocation();
   const idProduct = location.pathname.split("/id=")[1];
@@ -37,4 +37,4 @@ const Detail = () => {
   );
 };
 
-export default Detail;
+export default Details;
