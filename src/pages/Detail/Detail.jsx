@@ -31,6 +31,7 @@ const Detail = () => {
           />
         ) : (
           <LoadingDetail/>
+          
         )}
       </Container>
     </div>
