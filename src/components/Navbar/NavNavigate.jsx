@@ -23,7 +23,9 @@ const NavNavigate = ({styles , clsx}) => {
               }}
               onClick={()=>{
                 if(item.toLocaleLowerCase() === 'shop'){
-                  navigate(`/HONGO_QTAI-Commercejs/shop/search=${item}&post_type=${post_type}`);
+                  navigate(`/shop/search=${item}&post_type=${post_type}`);
+                }else if(item.toLocaleLowerCase() === 'home'){
+                  navigate('/HONGO_QTAI-Commercejs');
                 }
               }}
               key={index} >{item}</li>

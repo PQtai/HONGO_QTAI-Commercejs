@@ -12,7 +12,7 @@ const Categories = ({post_type}) => {
   const dispatch = useDispatch();
   const handleFilterByCategory = (nameCategory)=>{
     dispatch(setFilterWithCategories(nameCategory));
-    navigate(`/HONGO_QTAI-Commercejs/shop/search=${nameCategory}&post_type=${post_type}`);
+    navigate(`/shop/search=${nameCategory}&post_type=${post_type}`);
   }
   return (
     <div className={clsx(styles.categories)} >

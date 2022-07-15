@@ -2,7 +2,7 @@ import { Grid } from '@mui/material';
 import React from 'react'
 import Footer from '../../Footer/Footer';
 import Navbar from '../../Navbar/Navbar';
-import BannerSearch from '../../SearchCpn/BannerSearch/BannerSearch';
+import BannerSearch from '../../SearchComponent/BannerSearch/BannerSearch';
 import { displayOverlaySelector, itemPropOverlaySelector, search_parametersSelector } from '../../../redux';
 import { useSelector } from 'react-redux';
 import Overlay from '../../Overlay/Overlay';

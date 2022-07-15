@@ -10,6 +10,7 @@ import silderImg5 from '../../../assets/img/BodyImg/slider/sliderImg5.jpeg';
 import silderImg6 from '../../../assets/img/BodyImg/slider/sliderImg6.jpeg';
 import silderImg7 from '../../../assets/img/BodyImg/slider/sliderImg7.jpeg';
 import silderImg8 from '../../../assets/img/BodyImg/slider/sliderImg8.jpeg';
+import { Container } from '@mui/material';
 const EndContainer = () => {
   const images = [
     {
@@ -48,7 +49,7 @@ const EndContainer = () => {
   };
   return (
     <div className={clsx(styles.endContainer)} >
-       <div className={clsx(styles.wrapAllItem)} >
+      <Container>
           <ReactSlick detailsSetings={detailsSetings} >
             {images.map((itemImage , index)=>{
               return (
@@ -61,7 +62,7 @@ const EndContainer = () => {
               )
             })}
           </ReactSlick>
-       </div>
+        </Container>
     </div>
   )
 }

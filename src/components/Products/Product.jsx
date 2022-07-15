@@ -19,9 +19,11 @@ import ItemQuickView from "../ItemQuickView/ItemQuickView";
 import { commerce } from "../../lib/commerce";
 import { useState } from "react";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ product, propsStyles }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [disabled, setDisabled] = useState(false);
   const infoToastMess = useSelector(infoToastMessSelector);
   const customToastMess = useRef({ ...infoToastMess });
@@ -53,6 +55,9 @@ const Product = ({ product, propsStyles }) => {
             return (
               <div
                 key={index}
+                onClick={() =>{
+                  navigate(`/detail/id=${product.id}`);
+                }}
                 className={clsx((propsStyles ? propsStyles : styles).itemImage)}
                 alt="img product"
                 style={{
@@ -110,6 +115,9 @@ const Product = ({ product, propsStyles }) => {
                       <PanoramaVerticalSelectTwoToneIcon />
                     </Button>
                     <Button
+                      onClick={() =>{
+                        navigate(`/detail/id=${product.id}`);
+                      }}
                       className={clsx(
                         (propsStyles ? propsStyles : styles).wrapIcon
                       )}

@@ -17,7 +17,7 @@ const Navbar = () => {
         }else{
           elementNav.current.style.backgroundColor = '';
         }
-      } else if (y < window.scrollY && window.scrollY > 150) {
+      } else if (y < window.scrollY && window.scrollY > 80) {
         elementNav.current.style.top = '-120px';
       }
       setY(window.scrollY);

@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import styles from './Footer.module.scss'
-import { Grid } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 import { Button } from '../../assets/styles/globalStyles'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -12,7 +12,8 @@ import PinterestIcon from '@mui/icons-material/Pinterest';
 const Footer = () => {
   return (
     <div className={clsx(styles.footer)} >
-        <div className={clsx(styles.wrap)} >
+        {/* <div className={clsx(styles.wrap)} > */}
+        <Container>
             <div className={clsx(styles.FHeader)} >
                 <Grid container spacing={2} >
                     <Grid item md={7}>
@@ -127,17 +128,20 @@ const Footer = () => {
                     </Grid>
                 </Grid>
             </div>
-        </div>
+        </Container>
         <div className={clsx(styles.FClose)} > 
-        <div className={clsx(styles.wrap)} >
-            <div className={clsx(styles.supplier)} >
-            © 2022 HONGO-QT is Proudly Powered by ThemeZaa
-            </div>
-            <div className={clsx(styles.paymentCart)} >
-                <img src="https://hongo.b-cdn.net/wp-content/uploads/2019/05/footer-payment-icon.png" alt="payment" />
-            </div>
+            <Container>
+                <div className={clsx(styles.wrap)} >
+                    <div className={clsx(styles.supplier)} >
+                    © 2022 HONGO-QT is Proudly Powered by ThemeZaa
+                    </div>
+                    <div className={clsx(styles.paymentCart)} >
+                        <img src="https://hongo.b-cdn.net/wp-content/uploads/2019/05/footer-payment-icon.png" alt="payment" />
+                    </div>
+                </div>
+            </Container>
         </div>
-        </div>
+        {/* </div> */}
     </div>
   )
 }

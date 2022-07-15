@@ -3,9 +3,9 @@
     flex-direction: column;
     background-color: var(--background-color);
     color: var(--txt-primary-color);
-    .wrap{
-        margin: auto;
-        width: 80%;
+    // .wrap{
+    //     margin: auto;
+    //     width: 80%;
         .FHeader{
             padding: 20px 0;
             .getDiscount{
@@ -100,7 +100,7 @@
                 }
             }
         }
-    }
+    // }
     .FClose{
         padding: 20px 0;
         background-color: #141414;

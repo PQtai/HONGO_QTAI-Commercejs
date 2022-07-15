@@ -1,0 +1,158 @@
+.detailComponent{
+    margin-top: 150px;
+    .detailImg{
+        width: 100%;
+        display: flex;
+        .optionImg{
+            width: 24%;
+            > img , .skeleton{
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            margin-right: 10px;
+        }
+        .isOptionWrap{
+            flex: 1;
+            .isOptionImg, .skeleton{
+                padding-top: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+    .listInfo{
+        margin-left: 20px;
+        flex: 1;
+        > li{
+            border-bottom: 1px solid #ccc;
+        }
+        > li:nth-child(5){
+            border: none;
+        }
+        .itemName{
+            display: flex;
+            justify-content: space-between;
+            padding:0 0 10px 0;
+            .name{
+                h2 {
+                    margin-bottom: 5px;
+                }
+            }
+            .sku{
+                line-height: 50px;
+                font-size: 12px;
+            }
+        }
+        .itemIntro{
+            font-size: 14px;
+            padding: 10px 0;
+        }
+        .price{
+            margin: 10px 0;
+        }
+        .productDetailOptions{
+            padding: 10px 0;
+            .optionsWrap{
+                .listOptions{
+                    display: flex;
+                    align-items: center;
+                    >span{
+                        width: 60px;
+                    }
+                    >li {
+                        width: 40px;
+                        height: 20px;
+                        border: 1px solid #ccc;
+                        text-align: center;
+                        line-height: 100%;
+                        cursor: pointer;
+                    }
+                }
+                .optionAdd{
+                    display: flex;
+                    .toggleQuantity{
+                        display: flex;
+                        align-items: center;
+                        > input{
+                            width: 64px;
+                            text-align: center;
+                            &::-webkit-outer-spin-button,
+                            &::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                            }
+                            /* Firefox */
+                            &[type=number] {
+                            -moz-appearance: textfield;
+                            }
+                        }
+                        border: 1px solid #ccc;
+                        .btnToggle{
+                            display: flex;
+                            flex-direction: column;
+                            > button {
+                                background-color: #FFFFFF;
+                                padding: 2px 10px;
+                                border-left: 1px solid #ccc;
+                            }
+                            > button:nth-child(1){
+                                border-bottom: 1px solid #ccc;
+                            }
+                        }
+                    }
+                    .btnAdd{
+                        width: 40%;
+                        border: 1px solid #111;
+                        background-color: #111;
+                        color: #FFFFFF;
+                        margin-left: 20px;
+                    }
+                }
+                .btnAddToWishlist{
+                    display: flex;
+                    align-items: center;
+                    background-color: #FFFFFF;
+                    font-size: 12px;
+                    margin-top: 20px;
+                    &:hover {
+                        color: orange;
+                    }
+                    >svg{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .itemDescription{
+            padding: 10px 0;
+            .description{
+                >p{
+                    font-size: 14px;
+                }
+            }
+            >Button{
+                background-color: #FFFFFF;
+                &:hover{
+                    color: orange;
+                }
+            }
+        }
+        .paymentCart{
+            margin-top: 10px;
+            .listIcon{
+                display: flex;
+                >li{
+                    cursor: pointer;
+                    &:hover{
+                        opacity: 0.6;
+                    }
+                    svg {
+                        font-size: 16px;
+                        margin-right: 6px;
+                    }
+                }
+            }
+        }
+    }
+}

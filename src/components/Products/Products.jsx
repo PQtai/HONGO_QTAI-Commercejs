@@ -9,9 +9,15 @@ const Products = ({currentProducts ,loadingSearch}) => {
     <div className={clsx(styles.products)} >
       <Grid container spacing={2} >
         {loadingSearch?
-          ([1 , 2 , 3 , 4 , 5].map((item, index) => (
-                <Loading key={index} />
-            )))
+          (
+            [1 , 2].map((item, index) => {
+              return (
+                [1 , 2 , 3 , 4 , 5].map((item, index) => (
+                  <Loading key={index} />
+                ))
+              )
+            })
+          )
           :
           (currentProducts.length?
           currentProducts.map((product) => (

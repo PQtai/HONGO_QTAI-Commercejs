@@ -22,13 +22,13 @@ const ElementSearch = () => {
         dispath(setResulesSearch(value_search));
         dispath(setDisplayOverlay(false));
         dispath(setItemPropOverlay(<></>));
-        navigate(`/HONGO_QTAI-Commercejs/shop/search=${value_search}&post_type=${post_type}`);
+        navigate(`/shop/search=${value_search}&post_type=${post_type}`);
     }
   };
   const handleButtonSearch = () => {
       dispath(setDisplayOverlay(false));
       dispath(setItemPropOverlay(<></>));
-      navigate(`/HONGO_QTAI-Commercejs/search?s=${value_search}&post_type=${post_type}`);
+      navigate(`/shop/search=${value_search}&post_type=${post_type}`);
   };
   const handleOnChange = (e)=>{
     dispath(setValueSearch(e.target.value));
