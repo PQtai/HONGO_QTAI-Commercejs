@@ -10,7 +10,6 @@ const Details = () => {
   const location = useLocation();
   const idProduct = location.pathname.split("/id=")[1];
   const [loadingDetails, setLoadingDetails] = useState(true);
-  console.log(idProduct);
   useEffect(() => {
     commerce.products.retrieve(idProduct).then((product) => {
       setLoadingDetails(false);
