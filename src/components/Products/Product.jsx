@@ -56,7 +56,7 @@ const Product = ({ product, propsStyles }) => {
               <div
                 key={index}
                 onClick={() =>{
-                  navigate(`/detail/id=${product.id}`);
+                  navigate(`/details/id=${product.id}`);
                 }}
                 className={clsx((propsStyles ? propsStyles : styles).itemImage)}
                 alt="img product"
@@ -116,7 +116,7 @@ const Product = ({ product, propsStyles }) => {
                     </Button>
                     <Button
                       onClick={() =>{
-                        navigate(`/detail/id=${product.id}`);
+                        navigate(`/details/id=${product.id}`);
                       }}
                       className={clsx(
                         (propsStyles ? propsStyles : styles).wrapIcon
