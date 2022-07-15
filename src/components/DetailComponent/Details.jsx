@@ -8,7 +8,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import clsx from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
-import { infoToastMessSelector, setCart, setInfoToastMess } from '../../redux';
+import { infoToastMessSelector, setCart, setDisplayOverlay, setInfoToastMess, setItemPropOverlay } from '../../redux';
 import { commerce } from '../../lib/commerce';
 import { Button, ItemOption } from '../../assets/styles/globalStyles';
 const Details = ({productDetail , styles ,idProduct}) => {
@@ -76,6 +76,8 @@ const Details = ({productDetail , styles ,idProduct}) => {
         dispatch(setInfoToastMess(customToastMess.current));
         setDisabled(false);
         setDisabledNoOptions(false);
+        dispatch(setDisplayOverlay(false));
+        dispatch(setItemPropOverlay(<></>));
       })
       .catch((error) => {
         console.log(error);

@@ -2,18 +2,14 @@ import clsx from "clsx";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { categoryProductsSelector, productsSelector, setLoading, setResulesSearch } from "../../../redux";
+import { categoryProductsSelector, productsSelector } from "../../../redux";
 import Pagination from "./Pagination/Pagination";
 import Products from "../../Products/Products";
 import BasicSelect from "./BasicSelect";
 import styles from "./BodySearch.module.scss";
 import { commerce } from "../../../lib/commerce";
 import { useLocation } from "react-router-dom";
-const BodySearch = ({ 
-  filter_with_categories,
-  filter_with_price_asc,
-  filter_with_price_desc,
-}) => {
+const BodySearch = () => {
 
 
 
@@ -153,6 +149,7 @@ const BodySearch = ({
       default:
         break;
     }
+    // eslint-disable-next-line
   }, [keywordsSearch ,postType , dispatch]);
   const currentProducts = (
     (productsSearch.length || keywordsSearch) ? productsSearch : products

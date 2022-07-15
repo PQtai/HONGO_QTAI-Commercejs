@@ -8,8 +8,6 @@ import { useSelector } from 'react-redux';
 import Overlay from '../../Overlay/Overlay';
 import ToastMessage from '../../ToastMessage/ToastMessage';
 import Categories from './Categories';
-import FilByColor from './FilByColor';
-import FilBySize from './FilBySize';
 import FilByPrice from './FilByPrice';
 import clsx from 'clsx';
 import styles from './SidebarLayout.module.scss'
