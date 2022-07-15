@@ -18,10 +18,10 @@ const FilByPrice = ({post_type}) => {
   const handleFilterByPrice = (optionPrice)=>{
     if(optionPrice === 'desc'){
       dispatch(setFilterWithPriceDesc(optionPrice));
-      navigate(`/HONGO_QTAI-Commercejs/shop/search=${optionPrice}&post_type=${post_type}`);
+      navigate(`/shop/search=${optionPrice}&post_type=${post_type}`);
     }else if(optionPrice === 'asc'){
       dispatch(setFilterWithPriceAsc(optionPrice));
-      navigate(`/HONGO_QTAI-Commercejs/shop/search=${optionPrice}&post_type=${post_type}`);
+      navigate(`/shop/search=${optionPrice}&post_type=${post_type}`);
     }
   }
   return (
