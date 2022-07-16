@@ -1,21 +1,29 @@
 import clsx from "clsx";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./DetailComponent.module.scss";
 const DetailImg = ({ productDetail }) => {
   console.log(productDetail);
+  const [isOptionImg , setIsOptionImg] = useState(productDetail?.image?.url);
   return (
     <div className={clsx(styles.detailImg)}>
       <div className={clsx(styles.optionImg)} >
         {productDetail?.assets?.map((item, index)=>{
           return (
-            <img key={index} src={item.url} alt="imgProduct" />
+            <img 
+            onClick={()=>{
+              setIsOptionImg(item.url);
+            }}
+            className={clsx({
+              [styles.opacity]: item.url === isOptionImg,
+            })}
+            key={index} src={item.url} alt="imgProduct" />
           )
         })}
       </div>
       <div className={clsx(styles.isOptionWrap)}>
         <div
           style={{
-            backgroundImage: `url(${productDetail?.image?.url})`,
+            backgroundImage: `url(${isOptionImg})`,
           }}
           className={clsx(styles.isOptionImg)}
         ></div>
