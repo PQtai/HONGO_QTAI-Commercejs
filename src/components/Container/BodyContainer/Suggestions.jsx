@@ -17,7 +17,7 @@ const Suggestions = () => {
                 elementSuggestionsLeft.current.classList.add(clsx(styles.active));
                 elementSuggestionsRight.current.classList.add(clsx(styles.active));
             }else{
-                if(elementSuggestionsLeft.current.classList.contains(clsx(styles.active))){
+                if(elementSuggestionsLeft.current?.classList.contains(clsx(styles.active))){
                     observer.disconnect();
                 }
             }

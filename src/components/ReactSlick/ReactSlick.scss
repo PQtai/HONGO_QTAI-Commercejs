@@ -1,0 +1,15 @@
+.slick-slider{
+    overflow:hidden;
+    .slick-slide{
+        // margin: 10px;
+        .MuiGrid-root{
+            max-width: 100%;
+        }
+    }
+    .slick-list {
+        margin: 0 -7px !important;
+    }
+      .slick-slide > div {
+        padding: 0 7px !important;
+      }
+}
