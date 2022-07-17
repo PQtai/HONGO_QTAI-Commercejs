@@ -38,118 +38,122 @@
             }
         }
         .productsNotable{
-            .product{
-                text-align: center;
-                .imgProduct{
-                    width: 100%;
-                    padding-top: 120%;
-                    overflow: hidden;
-                    position: relative;
-                    cursor: pointer;
-                    .btnOptions{
-                        position: absolute;
-                        bottom: -50px;
-                        left: 0;
-                        right: 0;
-                        z-index: 11;
-                        display: flex;
-                        transition: bottom .2s linear;
-                        .optionAdd,
-                        .optionShow{
-                            height: 34px;
-                            overflow: hidden;
-                            width: 50%;
-                            background-color: #111;
-                            transition: all .5s ease-out;
-                            cursor: pointer;
-                            .wrapIcon{
-                                width: 100%;
-                                height: 100%;
-                                background-color: transparent;
-                                color: #FFFFFF;
-                                > svg{
-                                    font-size: 16px;
+            .wrapSlick{
+                width: 100%;
+                .product{
+                    text-align: center;
+                    padding-left: 10px;
+                    .imgProduct{
+                        width: 100%;
+                        padding-top: 120%;
+                        overflow: hidden;
+                        position: relative;
+                        cursor: pointer;
+                        .btnOptions{
+                            position: absolute;
+                            bottom: -50px;
+                            left: 0;
+                            right: 0;
+                            z-index: 11;
+                            display: flex;
+                            transition: bottom .2s linear;
+                            .optionAdd,
+                            .optionShow{
+                                height: 34px;
+                                overflow: hidden;
+                                width: 50%;
+                                background-color: #111;
+                                transition: all .5s ease-out;
+                                cursor: pointer;
+                                .wrapIcon{
+                                    width: 100%;
+                                    height: 100%;
+                                    background-color: transparent;
+                                    color: #FFFFFF;
+                                    > svg{
+                                        font-size: 16px;
+                                    }
+                                    transition: all .5s ease-in-out;
                                 }
-                                transition: all .5s ease-in-out;
+                                &:hover{
+                                    background-color: #FFFFFF;
+                                }
+                                &:hover .wrapIcon{
+                                    transform: translateY(-100%);
+                                    color: #111;
+                                }
+                            }
+                            .optionAdd{
+                                width: 100%;
+                            }
+                            .optionShow{
+                                position: relative;
+                                &::before{
+                                    content: "";
+                                    position: absolute;
+                                    width: .5px;
+                                    height: 100%;
+                                    top: 0;
+                                    left: 0;
+                                    background-color: #FFFFFF;
+                                }
+                            }
+                        }
+                        .btnFavorite{
+                            border-radius: 50%;
+                            background-color: #FFFFFF;
+                            position: absolute;
+                            top: 10px;
+                            right: -30px;
+                            display: flex;
+                            align-items: center;
+                            padding: 4px;
+                            z-index: 11;
+                            transition: all .3s linear;
+                            border: .5px solid #ccc;
+                            > svg {
+                                font-size: 20px;
                             }
                             &:hover{
-                                background-color: #FFFFFF;
-                            }
-                            &:hover .wrapIcon{
-                                transform: translateY(-100%);
-                                color: #111;
+                                background-color: #111;
+                                color: #FFFFFF;
                             }
                         }
-                        .optionAdd{
-                            width: 100%;
+                        .itemImage{
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            left: 0;
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            padding-top: 120%;
+                            transition: all .4s ease-in-out;
                         }
-                        .optionShow{
-                            position: relative;
-                            &::before{
-                                content: "";
-                                position: absolute;
-                                width: .5px;
-                                height: 100%;
-                                top: 0;
-                                left: 0;
-                                background-color: #FFFFFF;
-                            }
+                        margin-bottom: 10px;
+                        .itemImage:nth-child(1) {
+                            opacity: 0;
                         }
-                    }
-                    .btnFavorite{
-                        border-radius: 50%;
-                        background-color: #FFFFFF;
-                        position: absolute;
-                        top: 10px;
-                        right: -30px;
-                        display: flex;
-                        align-items: center;
-                        padding: 4px;
-                        z-index: 11;
-                        transition: all .3s linear;
-                        border: .5px solid #ccc;
-                        > svg {
-                            font-size: 20px;
+                        &:hover .itemImage:nth-child(1) {
+                            z-index: 10;
+                            opacity: 1;
                         }
-                        &:hover{
-                            background-color: #111;
-                            color: #FFFFFF;
+                        &:hover .itemImage:nth-child(2) {
+                            opacity: 0;
+                        }
+                        &:hover .btnOptions{
+                            bottom: 0;
+                        }
+                        &:hover .btnFavorite{
+                            right: 10px;
                         }
                     }
-                    .itemImage{
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        left: 0;
-                        background-size: cover;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        padding-top: 120%;
-                        transition: all .4s ease-in-out;
+                    .nameProduct{
+    
                     }
-                    margin-bottom: 10px;
-                    .itemImage:nth-child(1) {
-                        opacity: 0;
+                    .priceProduct{
+    
                     }
-                    &:hover .itemImage:nth-child(1) {
-                        z-index: 10;
-                        opacity: 1;
-                    }
-                    &:hover .itemImage:nth-child(2) {
-                        opacity: 0;
-                    }
-                    &:hover .btnOptions{
-                        bottom: 0;
-                    }
-                    &:hover .btnFavorite{
-                        right: 10px;
-                    }
-                }
-                .nameProduct{
-
-                }
-                .priceProduct{
-
                 }
             }
         }
