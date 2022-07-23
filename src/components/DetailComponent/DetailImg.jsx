@@ -2,7 +2,6 @@ import clsx from "clsx";
 import React, { useState } from "react";
 import styles from "./DetailComponent.module.scss";
 const DetailImg = ({ productDetail }) => {
-  console.log(productDetail);
   const [isOptionImg , setIsOptionImg] = useState(productDetail?.image?.url);
   return (
     <div className={clsx(styles.detailImg)}>
