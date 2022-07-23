@@ -6,6 +6,7 @@ import { infoToastMessSelector, setCart, setInfoToastMess } from "../../redux";
 import ItemCart from "./ItemCart";
 import { Button } from "../../assets/styles/globalStyles";
 import KeyboardTabIcon from '@mui/icons-material/KeyboardTab';
+import { Link } from "react-router-dom";
 const CustomCart = ({ styles, productInCart , cart }) => {
   const dispatch = useDispatch();
   const customToastMess = { ...useSelector(infoToastMessSelector) };
@@ -51,8 +52,12 @@ const CustomCart = ({ styles, productInCart , cart }) => {
               <span>SUBTOTAL:</span>
               <span>{cart?.subtotal?cart.subtotal.formatted_with_symbol:'$0'}</span>
             </div>
-            <Button className={clsx(styles.viewCart)} >VIEW CART</Button>
-            <Button className={clsx(styles.checkoutCart)} >CHECKOUT</Button>
+            <Link to='/cart/' >
+              <Button className={clsx(styles.viewCart)} >VIEW CART</Button>
+            </Link>
+            <Link to='/checkout/'>
+              <Button className={clsx(styles.checkoutCart)} >CHECKOUT</Button>
+            </Link>
         </div>
     </div>
   );

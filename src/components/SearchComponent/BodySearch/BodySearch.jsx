@@ -52,8 +52,7 @@ const BodySearch = () => {
       (item => item.slug.toLowerCase() === keywordsSearch.toLowerCase())
     ) : true;
     
-    console.log(checkIsExistCategories);
-    console.log(keywordsSearch);
+    
     if(!checkIsExistCategories){
       commerce.products.list({
         limit: 200,
@@ -132,7 +131,6 @@ const BodySearch = () => {
         handleGetProductsTypeIsCategories();
         break;
       case 'in_shop':
-        console.log('con cac');
         commerce.products.list({
           limit: 200,
         })
@@ -154,8 +152,6 @@ const BodySearch = () => {
   const currentProducts = (
     (productsSearch.length || keywordsSearch) ? productsSearch : products
   ).slice(indexOfFirstProduct, indexOfLastProduct || 1);
-    console.log('products' , products);
-    console.log('productsSearch' ,productsSearch);
   return (
     <div className={clsx(styles.bodySearch)}>
       {currentProducts.length?

@@ -5,7 +5,6 @@ import styles from "./DetailComponent.module.scss";
 import { Grid } from "@mui/material";
 import Details from "./Details";
 const DetailComponent = ({ productDetail, idProduct, loadingDetails }) => {
-  console.log(loadingDetails);
   return (
     <div className={clsx(styles.detailComponent)}>
       <Grid container spacing={2}>

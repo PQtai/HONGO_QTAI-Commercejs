@@ -42,7 +42,10 @@ const GlobalStyles = createGlobalStyle`
         outline : none;
     }
     .active{
-        displauy : block;
+        displauy : block !important;
+    }
+    .hide{
+        display: none !important;
     }
     .btn-close{
         position: absolute;

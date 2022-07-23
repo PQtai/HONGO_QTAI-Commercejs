@@ -138,10 +138,7 @@ const Details = ({productDetail , styles ,idProduct}) => {
               </div>
               <div className={clsx(styles.optionAdd)}>
                 <div
-                  className={clsx(styles.toggleQuantity, {
-                    disable:
-                      productDetail?.variant_groups?.length? disabled : disabledNoOptions,
-                  })}
+                  className={clsx(styles.toggleQuantity)}
                 >
                   <input
                     ref={elementInputQuantity}

@@ -20,8 +20,6 @@ const Pagination = ({
     for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
         pageNumbers.push(i);
     }
-    console.log('total' , totalProducts);
-    console.log('productsPerPage' , productsPerPage);
   return (
     <div className={clsx(styles.pagination)} >
         {loadingSearch?'':
