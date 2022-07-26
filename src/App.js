@@ -12,7 +12,10 @@ import { useDispatch } from 'react-redux';
 import {
   setCart,
   setCategoryProducts,
+  setErrorMessage,
+  setFunctionCaptureCheckout,
   setLoading,
+  setOrder,
   setProducts,
 } from './redux';
 
@@ -22,6 +25,23 @@ import {DefaultLayout} from './components/Layout';
 
 const App = () => {
   const dispatch = useDispatch();
+  const handleEmptyCart = () => {
+    const {cart} = commerce.cart.empty();
+    dispatch(setCart(cart));
+  }
+  const refreshCart = async () => {
+    const newCart = await commerce.cart.refresh();
+    dispatch(setCart(newCart));
+  }
+  const handleCaptureCheckout = async (checkoutTokenId  , newOrder) => {
+    try {
+      const incomingOrder = await commerce.checkout.capture(checkoutTokenId , newOrder);
+      dispatch(setOrder(incomingOrder));
+      refreshCart();
+    } catch (error) {
+      dispatch(setErrorMessage(error.data.error.message));
+    }
+  }
   useEffect(() => {
     const fetchData =  () => {
       commerce.products.list({
@@ -48,6 +68,7 @@ const App = () => {
     fetchCategories();
     fetchCart();
   }, [dispatch]) 
+  // useEffect(() => dispatch(setFunctionCaptureCheckout(handleCaptureCheckout)),[])
   return (
     <div>
       <GlobalStyles />

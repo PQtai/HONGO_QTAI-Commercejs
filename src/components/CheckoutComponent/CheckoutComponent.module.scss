@@ -1,0 +1,40 @@
+.checkoutComponent{
+    margin-bottom: 100px;
+    .headerWrap{
+        margin: 100px 0;
+        background-color: #111;
+        .headerCheckout{
+            color: #FFFFFF;
+            align-items: center;
+            justify-content: space-between;
+            display: flex;
+            padding: 10px 0;
+            .headerTitle{
+                font-size: 16px;
+            }
+            .listItem{
+                display: flex;
+                > li{
+                    font-size: 12px;
+                    color: var(--txt-primary-color);
+                    position: relative;
+                    padding: 10px 0 10px 10px;
+                    transition: color .2s ease-in-out;
+                    &:first-child::after{
+                        content: "";
+                        position: absolute;
+                        height: 40%;
+                        width: 1px;
+                        background-color: var(--txt-primary-color);
+                        right: -5px;
+                        top: 30%;
+                    }
+                    &:first-child:hover{
+                        color: #FFFFFF;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

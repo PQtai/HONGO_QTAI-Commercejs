@@ -72,8 +72,8 @@ const ItemInCart = ({
   const handleUpdateProduct = async (itemId ,productId, variantGroupsData) => {
     const {countVariants, itemUpdate} =  handleProductsDuplicate(productId ,variantGroupsData.options , index);
     if (countVariants === Object.keys(variantGroupsData.options).length) {
-      await handleDeleteProductWhenDuplicate(itemId);
-      await handleUpdateProductWhenDuplicate(itemUpdate.id,quantityPurchasedPerItem , itemUpdate.quantity);
+       await handleDeleteProductWhenDuplicate(itemId);
+       handleUpdateProductWhenDuplicate(itemUpdate.id,quantityPurchasedPerItem , itemUpdate.quantity);
     }else{
       variantGroupsData['quantity'] = quantityPurchasedPerItem;
       await commerce.cart.update(itemId, variantGroupsData)
