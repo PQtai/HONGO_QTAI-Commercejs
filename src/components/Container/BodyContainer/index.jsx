@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { loadingSelector, productsSelector } from '../../../redux';
 import Suggestions from './Suggestions';
 import Blog from './Blog';
-import { Container, Grid } from '@mui/material';
+import {Grid } from '@mui/material';
 import Product from '../../Products/Product';
 import Loading from '../../Loading/Loading';
 import { useCallback } from 'react';

@@ -12,6 +12,10 @@ import {
     SET_FILTER_WITH_CATEGORIES,
     SET_FILTER_WITH_PRICE_ASC,
     SET_FILTER_WITH_PRICE_DESC,
+    SET_SHIPPING_DATA,
+    SET_ORDER,
+    SET_FUNCTION_CAPTURE_CHECKOUT,
+    SET_ERROR_MESSAGE,
 } from './constants';
 const initialState = {
     products: [],
@@ -35,6 +39,10 @@ const initialState = {
         filter_with_price_asc : false,
         filter_with_price_desc : false,
     },
+    shippingData : {},
+    order : {},
+    functionCaptureCheckout : '',
+    errorMessage : '',
 }
 
 const rootReducer = (state = initialState , action) => {
@@ -121,6 +129,26 @@ const rootReducer = (state = initialState , action) => {
                     ...state.filter_options , 
                     filter_with_price_desc : action.payload
                 }
+            }
+        case SET_SHIPPING_DATA :
+            return {
+                ...state,
+                shippingData : action.payload
+            }
+        case SET_ORDER :
+            return {
+                ...state,
+                order : action.payload
+            }
+        case SET_FUNCTION_CAPTURE_CHECKOUT :
+            return {
+                ...state,
+                functionCaptureCheckout : action.payload
+            }
+        case SET_ERROR_MESSAGE :
+            return {
+                ...state,
+                errorMessage : action.payload
             }
         default:
             return state;

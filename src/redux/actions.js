@@ -12,6 +12,10 @@ import {
     SET_FILTER_WITH_CATEGORIES,
     SET_FILTER_WITH_PRICE_ASC,
     SET_FILTER_WITH_PRICE_DESC,
+    SET_SHIPPING_DATA,
+    SET_ORDER,
+    SET_FUNCTION_CAPTURE_CHECKOUT,
+    SET_ERROR_MESSAGE,
 }from './constants'
 
 export const setProducts = payload => ({
@@ -66,4 +70,19 @@ export const setFilterWithPriceDesc = payload => ({
     type: SET_FILTER_WITH_PRICE_DESC,
     payload: payload
 });
-
+export const setShippingData = payload => ({
+    type: SET_SHIPPING_DATA,
+    payload: payload
+});
+export const setOrder = payload => ({
+    type: SET_ORDER,
+    payload: payload
+});
+export const setFunctionCaptureCheckout = payload => ({
+    type: SET_FUNCTION_CAPTURE_CHECKOUT,
+    payload: payload
+});
+export const setErrorMessage = payload => ({
+    type: SET_ERROR_MESSAGE,
+    payload: payload
+});

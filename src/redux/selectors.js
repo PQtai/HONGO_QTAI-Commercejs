@@ -7,3 +7,7 @@ export const itemPropOverlaySelector = (value) => value.itemPropOverlay;
 export const infoToastMessSelector = (value) => value.infoToastMess;
 export const search_parametersSelector = (value) => value.search_parameters;
 export const filter_options_Selector = (value) => value.filter_options;
+export const shippingDataSelector = (value) => value.shippingData;
+export const setOrderSelector = (value) => value.order;
+export const setFunctionCaptureCheckoutSelector = (value) => value.functionCaptureCheckout;
+export const setErrorMessageSelector = (value) => value.errorMessage;

@@ -1,0 +1,118 @@
+.bodyCheckout{
+    
+    .formPayment,.formAddress{
+        .inputInfo{
+            width: 90%;
+            border: .5px solid #ccc;
+            font-size: 14px;
+            padding-left: 10px;
+            margin: 10px 0;
+            height: 40px;
+        }
+    }
+    .formAddress{
+        .wrapTextField{
+            position: relative;
+            .errorMsg{
+                color: red;
+                font-size: 12px;
+            }
+        }
+        .customForm{
+            height: 100%;
+            width: 90%;
+            position: relative;
+            > button{
+                position: absolute;
+                height: 50%;
+                // margin-top: 10%;
+                background-color: #111;
+                color: #FFFFFF;
+                padding: 20px;
+                bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            .btnBack{
+                left: 0;
+            }
+            .btnNext{
+                right: 0;
+            }
+        }
+    }
+    .formPayment{
+        .reviews{
+            > h5{
+                margin: 20px 0;
+            }
+            .listProduct{
+                .items{
+                    margin: 10px 0;
+                    display: flex;
+                    justify-content: space-between;
+                    > p ,span{
+                        font-size: 12px;
+                    }
+                }
+                .checkout{
+                    display: flex;
+                    .viewTotal{
+                        width: 50%;
+                    }
+                    .payWith{
+                        display: flex;
+                        width: 100%;
+                        justify-content: flex-end;
+                        > button{
+                            background-color: #111;
+                            color: #f7f7f7;
+                            padding: 0 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .optionsPayment{
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            > button{
+                padding : 10px 16px; 
+                background-color: #111;
+                color: #FFFFFF;
+            }
+        }
+    }
+    .bannerCheckout{
+        .imgBanner{
+            background-image: url(https://hongo.b-cdn.net/wp-content/uploads/2019/06/left-banner.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding-top: 100%;
+        }
+    }
+    .yourInfo{
+        .infoWrap{
+            margin-top: 20px;
+            background-color: #f7f7f7;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            > li {
+                border-bottom: .5px solid #ccc;
+                margin: 10px 0;
+                padding: 10px 40px;
+                display: flex;
+                justify-content: space-between;
+                font-size: 14px;
+                > span:nth-child(2){
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

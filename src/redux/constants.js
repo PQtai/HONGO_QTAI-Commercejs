@@ -11,6 +11,10 @@ export const SET_RESULTS_SEARCH = 'set_results_search';
 export const SET_FILTER_WITH_CATEGORIES = 'set_filter_with_categories';
 export const SET_FILTER_WITH_PRICE_ASC = 'set_filter_with_price_asc';
 export const SET_FILTER_WITH_PRICE_DESC = 'set_filter_with_price_desc';
+export const SET_SHIPPING_DATA = 'set_shipping_data';
+export const SET_ORDER = 'set_order';
+export const SET_FUNCTION_CAPTURE_CHECKOUT = 'set_function_capture_checkout';
+export const SET_ERROR_MESSAGE = 'set_error_message';
 
 
 
